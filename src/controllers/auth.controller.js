@@ -17,3 +17,5 @@ const me=(req,res)=>{
 
 }
 export {register,login,me};
+
+//here we process body and send to services
