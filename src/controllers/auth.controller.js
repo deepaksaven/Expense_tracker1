@@ -1,5 +1,5 @@
-import registerUser from '../services/auth.service.js'
-
+import registerUser from '../services/auth.service.js';
+import loginUser from '../services/auth.service.js';
 
 const register=(req,res)=>{
     const body=req.body;
@@ -11,10 +11,19 @@ const register=(req,res)=>{
 
 }
 const login=(req,res)=>{
-
+     const body =req.body;
+    const response= loginUser(body);
+    res.status(200).json({
+        message:'Login Successfull',
+        data:response
+    })
 }
 const me=(req,res)=>{
-
+       const body =req.body;
+    const response= meUser(body);
+    res.status(200).json({
+        data:response
+    })
 }
 export {register,login,me};
 
